@@ -35,6 +35,6 @@ Will return:
 
 Source data
 -----------
-This tool use data from this source:
+This tool uses data from this source:
 
 http://cpansearch.perl.org/src/BRIANL/Lingua-EN-Nickname-1.17/nicknames.txt
