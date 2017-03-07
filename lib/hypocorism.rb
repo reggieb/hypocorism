@@ -1,6 +1,6 @@
 module Hypocorism
 
-  VERSION = '0.0.1'
+  VERSION = '0.0.2'
 
   class << self
     def source_path
@@ -16,7 +16,7 @@ module Hypocorism
     end
 
     def match(name, another)
-      variations_of(name).include?(another)
+      variations_of(name.downcase).include?(another.downcase)
     end
 
     def variations_of(name)
@@ -27,7 +27,8 @@ module Hypocorism
     def source_with_e_varients
       source.collect! do |line|
         line.collect!{|m| /(.*)E$/ =~ m ? e_varients_of($1) : m}
-        line.flatten
+        line.flatten!
+        line.collect! &:downcase!
       end
     end
 
